@@ -1,0 +1,9 @@
+{
+  "name": "CPA-WP",
+  "description": "Consumer Protection Association Portal (Taiz) - Comprehensive Web App with Price Guide, Reporting System, HR, CiviCRM Integration, and Admin Dashboard.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
