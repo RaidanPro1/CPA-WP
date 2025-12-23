@@ -4,7 +4,7 @@ export type Language = 'ar' | 'en';
 export interface User {
   id: string;
   username: string;
-  password?: string; // Only used for creation/auth checks
+  password?: string;
   role: 'admin' | 'donor' | 'staff';
   name: string;
 }
@@ -14,10 +14,18 @@ export interface Product {
   code: string;
   nameAr: string;
   nameEn: string;
-  price: number; // Official Price
+  price: number;
   unit: string;
   lastUpdated: string;
   category: string;
+}
+
+export interface CiviCRMStats {
+  totalDonors: number;
+  activeProjects: number;
+  totalDonations: number;
+  lastSync: string;
+  trends: { month: string; amount: number }[];
 }
 
 export interface SlideData {
@@ -57,12 +65,12 @@ export interface DashboardStat {
 
 export interface NewsItem {
   id: number;
-  titleKey: string; // Keep for translation fallback
-  titleAr?: string; // Dynamic content
-  titleEn?: string; // Dynamic content
-  descKey: string; // Keep for translation fallback
-  descAr?: string; // Dynamic content
-  descEn?: string; // Dynamic content
+  titleKey: string;
+  titleAr?: string;
+  titleEn?: string;
+  descKey: string;
+  descAr?: string;
+  descEn?: string;
   date: string;
   image: string;
 }
@@ -101,13 +109,6 @@ export interface OrganizationProfile {
   addressEn: string;
 }
 
-export interface CiviCRMStats {
-  totalDonors: number;
-  activeProjects: number;
-  totalDonations: number;
-  lastSync: string;
-}
-
 export interface ViolationReport {
   id: string;
   productCode?: string;
@@ -120,10 +121,10 @@ export interface ViolationReport {
     lng: number;
   } | null;
   description: string;
-  aiAnalysis?: string; // From Gemini
+  aiAnalysis?: string;
   status: 'pending' | 'reviewed' | 'resolved';
   timestamp: string;
-  evidenceImage?: string; // Base64 or URL
+  evidenceImage?: string;
 }
 
 export interface Partner {
